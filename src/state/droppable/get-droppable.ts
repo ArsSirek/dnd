@@ -25,7 +25,10 @@ interface Args {
   descriptor: DroppableDescriptor;
   isEnabled: boolean;
   isCombineEnabled: boolean;
-  isCombineAllowedForItem?: (descriptor: DraggableDescriptor) => boolean;
+  isCombineAllowedForItem?: (
+    combineWith: DraggableDescriptor,
+    combineTarget: DraggableDescriptor,
+  ) => boolean;
   isFixedOnPage: boolean;
   direction: 'vertical' | 'horizontal';
   client: BoxModel;

@@ -64,7 +64,10 @@ export interface DefaultProps {
   ignoreContainerClipping: boolean;
   isCombineEnabled: boolean;
   isCombineAllowedForItem:
-    | ((combineWith: DraggableDescriptor) => boolean)
+    | ((
+        combineWith: DraggableDescriptor,
+        combineTarget: DraggableDescriptor,
+      ) => boolean)
     | undefined;
   isDropDisabled: boolean;
   mode: DroppableMode;

@@ -79,7 +79,10 @@ interface Args {
   direction: Direction;
   isDropDisabled: boolean;
   isCombineEnabled: boolean;
-  isCombineAllowedForItem?: (combineWith: DraggableDescriptor) => boolean;
+  isCombineAllowedForItem?: (
+    combineWith: DraggableDescriptor,
+    combineTarget: DraggableDescriptor,
+  ) => boolean;
   shouldClipSubject: boolean;
 }
 

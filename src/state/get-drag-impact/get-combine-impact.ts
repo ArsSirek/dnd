@@ -108,7 +108,10 @@ export default ({
   if (
     !combineWith ||
     (destination.isCombineAllowedForItem &&
-      !destination.isCombineAllowedForItem(combineWith.descriptor))
+      !destination.isCombineAllowedForItem(
+        combineWith.descriptor,
+        draggable.descriptor,
+      ))
   ) {
     return null;
   }
