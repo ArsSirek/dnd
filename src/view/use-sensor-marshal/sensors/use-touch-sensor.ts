@@ -407,7 +407,7 @@ export default function useTouchSensor(api: SensorAPI) {
       const longPressTimerId: TimeoutID = setTimeout(
         startDragging,
         timeForLongPress,
-      );
+      ) as unknown as number;
 
       setPhase({
         type: 'PENDING',

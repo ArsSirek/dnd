@@ -8,11 +8,11 @@ export default function useDevSetupWarning(fn: () => void, inputs?: unknown[]) {
     useEffect(() => {
       try {
         fn();
-      } catch (e) {
+      } catch (e: unknown) {
         error(`
           A setup problem was encountered.
 
-          > ${e.message}
+          > ${(e as Error).message}
         `);
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps

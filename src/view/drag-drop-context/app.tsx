@@ -46,7 +46,6 @@ import useAnnouncer from '../use-announcer';
 import useHiddenTextElement from '../use-hidden-text-element';
 import AppContext from '../context/app-context';
 import type { AppContextValue } from '../context/app-context';
-import useStartupValidation from './use-startup-validation';
 import usePrevious from '../use-previous-ref';
 import { warning } from '../../dev-warning';
 import useSensorMarshal from '../use-sensor-marshal/use-sensor-marshal';
@@ -121,8 +120,6 @@ export default function App(props: Props) {
     dragHandleUsageInstructions,
   } = props;
   const lazyStoreRef: LazyStoreRef = useRef<Store | null>(null);
-
-  useStartupValidation();
 
   // lazy collection of responders using a ref - update on ever render
   const lastPropsRef = usePrevious<Props>(props);
